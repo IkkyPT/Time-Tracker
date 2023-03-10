@@ -1,11 +1,17 @@
+// Setting up timer 
+
 let hh = 0;
 let mm = 0;
 let ss = 0;
 let cron;
+let isStartOn = false;
 
 function start(){
-    timer();
-    cron = setInterval(() => { timer(); }, 1000);
+    if (isStartOn == false) {
+        timer();
+        cron = setInterval(() => { timer(); }, 1000);
+        isStartOn = true;
+    }
 }
 
 function reset(){
@@ -15,10 +21,13 @@ function reset(){
     document.getElementById('hour').innerHTML = "00";
     document.getElementById('minute').innerHTML = "00";
     document.getElementById('second').innerHTML = "00";
+    stop();
+    isStartOn = false;
 }
 
 function stop(){
     clearInterval(cron);
+    isStartOn = false;
 }
 
 function timer(){
@@ -40,5 +49,7 @@ function timer(){
 function returnData(input) {
     return input > 10 ? input : `0${input}`
 }
+
+// Setting up currently date and hour
 
 
