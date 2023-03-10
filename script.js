@@ -69,3 +69,14 @@ function updateDateTime() {
 
 updateDateTime();
 setInterval(updateDateTime, 1000);
+
+// Setting up total and project time
+
+
+// UI
+const btnNew = document.getElementById('push-down');
+const dropdown = document.querySelector(".dropdown");
+
+btnNew.addEventListener("click", () => {
+  dropdown.classList.toggle("show");
+});
