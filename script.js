@@ -18,7 +18,7 @@ function reset(){
 }
 
 function stop(){
-
+    clearInterval(cron);
 }
 
 function timer(){
