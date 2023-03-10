@@ -34,6 +34,10 @@ body {
     gap: 20px;
 }
 
+.time > span {
+    font-size: 120px;
+}
+
 .icon-bar {
     display: flex;
     align-items: center;
@@ -105,10 +109,6 @@ ul > li:hover {
     transition: 0.2s;
 }
 
-#time {
-    font-size: 130px;
-}
-
 .current-date {
     font-size: xx-large;
 }
@@ -120,10 +120,14 @@ ul > li:hover {
 .list-time {
     display: flex;
     flex-direction: column;
-    margin-top: auto;
-    padding-left: 30px;
+    margin-top: 900px;
+    padding: 30px;
     font-size: 20px;
     color: white;
 }
 
 
+.list-time > span:hover {
+    background: #252c47;
+    transition: 0.2s;
+}
