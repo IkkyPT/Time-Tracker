@@ -47,9 +47,25 @@ function timer(){
 }
 
 function returnData(input) {
-    return input > 10 ? input : `0${input}`
+    return input > 9 ? input : `0${input}`
 }
 
 // Setting up currently date and hour
 
+const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
+function updateDateTime() {
+  const today = new Date();
+  const day = today.getDate();
+  const monthIndex = today.getMonth();
+  const year = today.getFullYear();
+
+  const formattedDate = `${day} ${months[monthIndex]}, ${year}`;
+  const formattedTime = `${returnData(today.getHours())}:${returnData(today.getMinutes())}:${returnData(today.getSeconds())}`;
+
+  document.getElementById("current-date").innerHTML = formattedDate;
+  document.getElementById("current-time").innerHTML = formattedTime;
+}
+
+updateDateTime();
+setInterval(updateDateTime, 1000);
