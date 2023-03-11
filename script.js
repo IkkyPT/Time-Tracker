@@ -1,3 +1,7 @@
+// Variables 
+const list = document.querySelector("ul");
+
+
 // Setting up timer 
 
 let hh = 0;
@@ -92,7 +96,6 @@ function addListItem() {
     if (newItemNameLen > 15){
         const warLimitWords = window.alert("You reached the character limits(15) please reenter new name.")
     }
-    const list = document.querySelector("ul");
     const newItem = document.createElement("li");
     const newSpan = document.createElement("span");
     newSpan.textContent = newItemName;
@@ -114,6 +117,21 @@ function deleteListItem(){
 }
 
 // Setting up total and project time
+
+
+// Reset timer once list item is selected
+list.addEventListener("click", (event) => {
+    const selecItem = event.target.closest("li");
+    if (!selecItem) return;
+    const allItems = document.querySelectorAll("li");
+    allItems.forEach((item) => {
+      if (item !== selecItem) {
+        item.style.backgroundColor = "";
+      }
+    });
+    selecItem.style.backgroundColor = "#252c47";
+    reset();
+});
 
 
 // UI
