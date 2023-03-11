@@ -81,15 +81,18 @@ function numProjects(){
         console.log("+1")
     }
     else {
-        const warningLimit = window.alert("You reached the limits of projects please delete one.")
+        const warLimitItems = window.alert("You reached the limits of projects please delete one.")
     }
 }
 
 // Add new project span
 function addListItem() {
     const newItemName = prompt("Enter the name of the new project:");
+    const newItemNameLen = newItemName.length;
+    if (newItemNameLen > 15){
+        const warLimitWords = window.alert("You reached the character limits(15) please reenter new name.")
+    }
     const list = document.querySelector("ul");
-
     const newItem = document.createElement("li");
     const newSpan = document.createElement("span");
     newSpan.textContent = newItemName;
@@ -105,12 +108,10 @@ function addListItem() {
 
 // Delete new project span
 function deleteListItem(){
-    const deleteListItem = document.querySelector("li");
-    deleteListItem.parentElement.removeChild(deleteListItem);
+    const deleteListItem = event.target.closest("li");
+    deleteListItem.remove();
     maxProjects--;
 }
-
-
 
 // Setting up total and project time
 
