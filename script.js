@@ -70,6 +70,48 @@ function updateDateTime() {
 updateDateTime();
 setInterval(updateDateTime, 1000);
 
+// Setting up new project button function
+let maxProjects = 0;
+
+function numProjects(){
+
+    if (maxProjects != 5){
+        addListItem();
+        maxProjects ++;
+        console.log("+1")
+    }
+    else {
+        const warningLimit = window.alert("You reached the limits of projects please delete one.")
+    }
+}
+
+// Add new project span
+function addListItem() {
+    const newItemName = prompt("Enter the name of the new project:");
+    const list = document.querySelector("ul");
+
+    const newItem = document.createElement("li");
+    const newSpan = document.createElement("span");
+    newSpan.textContent = newItemName;
+    const newDeleteBtn = document.createElement("button");
+    newSpan.className = "new";
+    newDeleteBtn.className = "delete";
+    newDeleteBtn.setAttribute("onclick", "deleteListItem(event)");
+    newDeleteBtn.innerHTML = '<i class="fa-solid fa-trash"></i>';
+    newItem.appendChild(newSpan);
+    newItem.appendChild(newDeleteBtn);
+    list.appendChild(newItem);
+}
+
+// Delete new project span
+function deleteListItem(){
+    const deleteListItem = document.querySelector("li");
+    deleteListItem.parentElement.removeChild(deleteListItem);
+    maxProjects--;
+}
+
+
+
 // Setting up total and project time
 
 

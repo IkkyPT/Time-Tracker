@@ -75,12 +75,27 @@
   }
   
   .dropdown {
+    animation-duration: 0.5s;
+    animation-name: slide-down;
+    animation-timing-function: ease-in-out;
     display: none;
   }
   
   .show {
     display: block;
   }
+
+  /* Define animation */
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
   
   .menu-list ul {
     display: flex;
@@ -103,6 +118,10 @@
   ul > li:hover {
     background: #252c47;
     transition: background-color 0.2s ease;
+  }
+
+  .new {
+    margin-right: 10px;
   }
   
   /* Time list styles */

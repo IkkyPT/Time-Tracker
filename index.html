@@ -15,7 +15,7 @@
     <body>
         <div class="sidebar">
             <div class="icon-bar">
-                <a href="#">
+                <a href="https://github.com/IkkyPT" target="_blank">
                     <i class="fa-brands fa-github fa-4x"></i>
                 </a>
                 <span class="creator">IkkyPT</span>
@@ -26,18 +26,11 @@
             <div class="menu-list">
                 <div class="new-project">
                     <i class="fa-solid fa-plus"></i>
-                    <button id="btn-new">New Project</button>
+                    <button id="btn-new" onclick="numProjects()">New Project</button>
                 </div>
                 <div class="dropdown">
                     <ul>
-                        <li>
-                            <span class="new">Rock-Paper-Scizor</span>
-                            <button class="delete"><i class="fa-solid fa-trash"></i></button>
-                        </li>
-                        <li>
-                            <span class="new">Calculadora</span>
-                            <button class="delete"><i class="fa-solid fa-trash"></i></button>
-                        </li>
+           
                     </ul>
                 </div>
                 <div class="list-time">
@@ -48,9 +41,7 @@
         </div>
         <div class="time-manager">
             <div class="time">
-                <span id="hour">00</span>:
-                <span id="minute">00</span>:
-                <span id="second">00</span>
+                <span id="hour">00</span>:<span id="minute">00</span>:<span id="second">00</span>
             </div>
             <div class="buttons">
              <button id="start-time" onclick="start()">Start</button>
